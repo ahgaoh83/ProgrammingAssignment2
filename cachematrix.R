@@ -1,4 +1,4 @@
-## Buiding two functions that cache the inverse of a matri
+
 
 ## The function, right below creates a special "matrix" object that can cache its inverse.
 
@@ -9,7 +9,7 @@ set<-function(y){
        vect<<-NULL
         }
  get<-function() x
- setresult<-function(spec_matrix) vect<<-spec_matrix
+ setresult<-function(result) vect<<-result
  getresult<-function() m
  list(set=set, get=get, setresult=setresult, getresult=getresult)
  }
@@ -22,7 +22,7 @@ cacheSolve <- function(x, ...) {
 vect<-x$getresult() 
         
 if(!is.null(vect)){
-        message("getting cached data")
+        message("getting cached matrix")
 }
    
 dat<-x$get()
