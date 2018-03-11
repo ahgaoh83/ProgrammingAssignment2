@@ -1,6 +1,6 @@
+## Two functions that cache the inverse of a matric
 
-
-## The function, right below creates a special "matrix" object that can cache its inverse
+# The function, right below creates a special "matrix" object that can cache its inverse
 
 makeCacheMatrix <- function(x = matrix()) {
 vect <- NULL
@@ -10,7 +10,7 @@ set<-function(y){
         }
  get<-function() x
  setresult<-function(result) vect<<-result
- getresult<-function() m
+ getresult<-function() vect
  list(set=set, get=get, setresult=setresult, getresult=getresult)
  }
 
@@ -23,10 +23,11 @@ vect<-x$getresult()
         
 if(!is.null(vect)){
         message("getting cached matrix")
+       return(result)
 }
    
 dat<-x$get()
-vect<-result(dat,...)
+vect<-solve(dat,...)
 x$setresult(vect)  
 vect
 }
